@@ -1,41 +1,85 @@
 #include<iostream>
-
-using namespace std;
-
-int CreateBoard() {
-    int board[3][3];
-    return board;
-}
-
-void DisplayBoard(int b[3][3]){
-  for (int i=0; i<b.size(); i++){
-    for (int j=0; j<b.size(); j++){
-      std::cout<<b[i][j];
-    }
-    std::cout<<std::endl;
-  }
-  std::cout<<std::endl;
-}
+#include <string>
 
 
-void PlaceMaker(int b, int arr, int marker) {
-    int x = arr[0][0];
-    int y = arr[0][1];
-    for (int i=0; i<3; i++){
+
+
+// declare Board Class
+#ifndef BOARD_H  // this is the header guard
+#define BOARD_H
+class Board {
+  public:
+    //Constructors
+    Board(){
+      for (int i=0; i<3; i++){
         for (int j=0; j<3; j++){
-            if (i == x && j == y)
-                b[i][j] = marker;
+          board_[i][j]="⬜️";
         }
+      }
     }
-}
+
+    void DisplayBoard(){
+      for (int i=0; i<3; i++){
+        for (int j=0; j<3; j++){
+          std::cout<<board_[i][j];
+        }
+        std::cout<<std::endl;
+      }
+      std::cout<<std::endl;
+    }
+
+    void PlaceMaker(int x, int y, std::string marker){
+      std::cout<<"flag"<<std::endl;
+      board_[x][y]= marker;
+    }
+
+    void getPlayerChoice(int *a, int *b){
+      int x,y;
+      std::cout<<"Which location would you like to play?"<<std::endl;
+      std::cout<<"X coordinate: ";
+      std::cin>>x;
+      std::cout<<std::endl;
+      std::cout<<"Y coordinate: ";
+      std::cin>>y;
+      *a=x;
+      *b=y;
+    }
 
 
-int * getPlayerChoice(){
-  int coordinates[2];
-  std::cout<<"Which location would you like to play?"<<std::endl;
-  std::cout<<"X coordinate: "<<std::cin>>x<<std::endl;
-  std::cout<<"Y coordinate: "<<std::cin>>y;
-  coordinates[0]=x;
-  coordinates[1]=y;
-  return coordinates;
+  private:
+    std::string board_[3][3];
+};
+
+#endif //end POINT_H header guard
+
+
+
+
+
+//Main
+
+int main(){
+  Board b;
+  int x=0;
+  int y=0;
+  int counter=0;
+  bool game=true;
+  std::string markers[2]={"❌", "⭕️"};
+  int player=0;
+
+  while(game){
+      b.DisplayBoard();
+      b.getPlayerChoice(&x,&y);
+      b.PlaceMaker(x, y, markers[player]);
+
+      counter++;
+      player= counter%2;
+
+      if(counter>9){
+        game=false;
+      }
+  }
+
+  b.DisplayBoard();
 }
+
