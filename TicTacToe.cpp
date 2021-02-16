@@ -1,27 +1,29 @@
 #include<iostream>
+#include <string>
+#include "Board.cpp"
+#include "Board.h"
 
-using namespace std;
+int main(){
+  Board b;
+  int x=0;
+  int y=0;
+  int counter=0;
+  bool game=true;
+  std::string markers[2]={"❌", "⭕️"};
+  int player=0;
 
-int CreateBoard() {
-    int board[3][3];
-}
+  while(game){
+      b.DisplayBoard();
+      b.getPlayerChoice(&x,&y);
+      b.PlaceMaker(x, y, markers[player]);
 
-void DisplayBoard(int b[3][3]){
-  for (int i=0; i<b.size(); i++){
-    for (int j=0; j<b.size(); j++){
-      std::cout<<b[i][j];
-    }
-    std::cout<<std::endl;
+      counter++;
+      player= counter%2;
+
+      if(counter>9){
+        game=false;
+      }
   }
-  std::cout<<std::endl;
-}
 
-int * getPlayerChoice(){
-  int coordinates[2];
-  std::cout<<"Which location would you like to play?"<<std::endl;
-  std::cout<<"X coordinate: "<<std::cin>>x<<std::endl;
-  std::cout<<"Y coordinate: "<<std::cin>>y;
-  coordinates[0]=x;
-  coordinates[1]=y;
-  return coordinates;
+  b.DisplayBoard();
 }
