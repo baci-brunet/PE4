@@ -27,3 +27,13 @@ void PlaceMaker(int b, int arr, int marker) {
         }
     }
 }
+
+int * getPlayerChoice(){
+  int coordinates[2];
+  std::cout<<"Which location would you like to play?"<<std::endl;
+  std::cout<<"X coordinate: "<<std::cin>>x<<std::endl;
+  std::cout<<"Y coordinate: "<<std::cin>>y;
+  coordinates[0]=x;
+  coordinates[1]=y;
+  return coordinates;
+}
