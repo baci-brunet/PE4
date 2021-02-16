@@ -17,6 +17,7 @@ void DisplayBoard(int *b){
   std::cout<<std::endl;
 }
 
+<<<<<<< baci_branch
 void PlaceMaker(int b, int arr, int marker) {
     int x = arr[0][0];
     int y = arr[0][1];
@@ -28,6 +29,8 @@ void PlaceMaker(int b, int arr, int marker) {
     }
 }
 
+=======
+>>>>>>> main
 int * getPlayerChoice(){
   int coordinates[2];
   std::cout<<"Which location would you like to play?"<<std::endl;
