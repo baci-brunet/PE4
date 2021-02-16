@@ -1,1 +1,49 @@
 
+⬜️⬜️⬜️
+⬜️⬜️⬜️
+⬜️⬜️⬜️
+
+Which location would you like to play?
+X coordinate: 0
+
+Y coordinate: 0
+flag
+❌⬜️⬜️
+⬜️⬜️⬜️
+⬜️⬜️⬜️
+
+Which location would you like to play?
+X coordinate: 0
+
+Y coordinate: 1
+flag
+❌⭕️⬜️
+⬜️⬜️⬜️
+⬜️⬜️⬜️
+
+Which location would you like to play?
+X coordinate: 1
+
+Y coordinate: 1
+flag
+❌⭕️⬜️
+⬜️❌⬜️
+⬜️⬜️⬜️
+
+Which location would you like to play?
+X coordinate: 0
+
+Y coordinate: 2
+flag
+❌⭕️⭕️
+⬜️❌⬜️
+⬜️⬜️⬜️
+
+Which location would you like to play?
+X coordinate: 2
+
+Y coordinate: 2
+flag
+❌⭕️⭕️
+⬜️❌⬜️
+⬜️⬜️❌
